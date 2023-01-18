@@ -35,8 +35,8 @@ Cara resolve conflict:
 FORMAT NAMA BRANCH:
 
 - feature/[HTTP METHOD]-[ENDPOINT] contoh:
-    - `feature/post-product`
-    - `feature/put-product`
+    - `feature/product`
+    - `feature/todos`
 
 FORMAT COMMIT MESSAGE:
 - [NAMA BRANCH]: message. contoh:
