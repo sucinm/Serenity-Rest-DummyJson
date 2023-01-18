@@ -40,5 +40,5 @@ FORMAT NAMA BRANCH:
 
 FORMAT COMMIT MESSAGE:
 - [NAMA BRANCH]: message. contoh:
-    - `feature/post-product: Add negative schenario` 
+    - `feature/product: Add negative schenario` 
 
