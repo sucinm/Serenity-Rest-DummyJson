@@ -34,11 +34,11 @@ Cara resolve conflict:
 # NOTE
 FORMAT NAMA BRANCH:
 
-- [HTTP METHOD]-[ENDPOINT] contoh:
-    - `POST-PRODUCT`
-    - `GET-PRODUCT`
+- feature/[HTTP METHOD]-[ENDPOINT] contoh:
+    - `feature/post-product`
+    - `feature/put-product`
 
 FORMAT COMMIT MESSAGE:
 - [NAMA BRANCH]: message. contoh:
-    - `POST-PRODUCT: Add negative schenario` 
+    - `feature/post-product: Add negative schenario` 
 
