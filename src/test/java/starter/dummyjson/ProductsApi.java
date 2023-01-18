@@ -7,12 +7,26 @@ import starter.dummyjson.Utils.Constant;
 
 import java.io.File;
 
-public class DummyJsonApi {
-    public static String POST_ADD_PRODUCT = Constant.BASE_URL + "/products?add";
+public class ProductsApi {
+    public static String POST_ADD_PRODUCT = Constant.BASE_URL + "/products/add";
     public static String PUT_UPDATE_PRODUCT = Constant.BASE_URL + "/products/{id}";
     public static String PATCH_UPDATE_PRODUCT = Constant.BASE_URL + "/products/{id}";
     public static String DELETE_PRODUCT = Constant.BASE_URL + "/products/{id}";
     public static String GET_LIST_PRODUCT = Constant.BASE_URL + "/auth/products";
+
+
+    @Step("Get list product with authorization")
+    public void getListProduct(String token) {
+        SerenityRest.given()
+                .header("Authorization", "Bearer" + token);
+    }
+
+    @Step("Post product")
+    public void postProduct(File json) {
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
 
     @Step("Put update product with invalid url")
     public void putUpdateProduct(int id, File json) {
@@ -22,4 +36,9 @@ public class DummyJsonApi {
                 .body(json);
     }
 
+    @Step("Delete product")
+    public void deleteProduct(int id) {
+        SerenityRest.given()
+                .pathParam("id", id);
+    }
 }
