@@ -1,6 +1,6 @@
 Feature: Delete
 
-  @PositiveCase
+
   Scenario Outline: Delete product with invalid id
     Given Delete product with valid id <id>
     When Send request delete product
