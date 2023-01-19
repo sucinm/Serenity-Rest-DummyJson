@@ -7,8 +7,8 @@ Feature: Delete user
     Then Should return status code 200
 
   @Test @NegativeCase @Users
-  Scenario: Delete product with invalid id
-    Given Delete product with invalid id "x"
+  Scenario: Delete user with invalid id
+    Given Delete user with invalid id "x"
     When Send request delete user
     Then Should return status code 400
     And Response body message "Invalid user id"

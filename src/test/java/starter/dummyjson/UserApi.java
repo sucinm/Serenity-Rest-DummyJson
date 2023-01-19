@@ -13,7 +13,7 @@ public class UserApi {
     public static String PUT_USER = Constant.BASE_URL + "/users/{id}";
     public static String DELETE_USER = Constant.BASE_URL + "/users/{id}";
 
-    @Step("Get single with valid id")
+    @Step("Get single user with valid id")
     public void getSingleUser(int id) {
         SerenityRest.given()
                 .pathParam("id", id);
@@ -41,13 +41,13 @@ public class UserApi {
     }
 
     @Step("Delete product with valid id")
-    public void deleteProduct(int id) {
+    public void deleteUser(int id) {
         SerenityRest.given()
                 .pathParam("id", id);
     }
 
-    @Step("Delete product with invalid id")
-    public void deleteProduct(String id) {
+    @Step("Delete user with invalid id")
+    public void deleteUser(String id) {
         SerenityRest.given()
                 .pathParam("id", id);
     }

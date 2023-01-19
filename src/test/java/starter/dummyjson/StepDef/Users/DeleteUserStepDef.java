@@ -14,7 +14,7 @@ public class DeleteUserStepDef {
     UserApi userApi;
     @Given("Delete user with valid id {int}")
     public void deleteUserWithValidId(int id) {
-        userApi.deleteProduct(id);
+        userApi.deleteUser(id);
     }
 
     @When("Send request delete user")
@@ -22,9 +22,9 @@ public class DeleteUserStepDef {
         SerenityRest.when().delete(UserApi.DELETE_USER);
     }
 
-    @Given("Delete product with invalid id {string}")
-    public void deleteProductWithInvalidId(String id) {
-        userApi.deleteProduct(id);
+    @Given("Delete user with invalid id {string}")
+    public void deleteUserWithInvalidId(String id) {
+        userApi.deleteUser(id);
     }
 
 }
