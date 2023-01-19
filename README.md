@@ -25,11 +25,11 @@ Cara resolve conflict:
   `git stash apply`
 - resolve conflict nya
 - add perubahan nya
-  `git add .`
+  `git add .` // boleh di branch mana aja
 - commit
-  `git commit -m "messagee"`
+  `git commit -m "messagee"` //boleh di branch mana aja
 - push
-  `git push origin <branch>`
+  `git push origin <branch>` // masuk ke branch yang mau di push. misalnya feature/todos -> git origin feature/todos
 
 # NOTE
 FORMAT NAMA BRANCH:
