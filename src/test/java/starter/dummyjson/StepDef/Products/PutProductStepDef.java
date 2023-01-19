@@ -18,8 +18,8 @@ public class PutProductStepDef {
     @Steps
     ProductsApi productsApi;
 
-    @Given("Update product with {int} as valid id and valid JSON")
-    public void updateProductWithAsValidIdAndValidJSON(int id) {
+    @Given("Update product with {int} as id and valid JSON")
+    public void updateProductWithAsIdAndValidJSON(int id) {
         File jsonRequest = new File(Constant.JSON_REQUEST + "/Products/RequestUpdateProduct.json");
         productsApi.putUpdateProduct(id, jsonRequest);
     }
