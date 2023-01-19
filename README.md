@@ -24,6 +24,8 @@ Cara resolve conflict:
 - apply perubahan yg udah di stash
   `git stash apply`
 - resolve conflict nya
+- how to check location branch
+  `git branch`
 - add perubahan nya
   `git add .` // boleh di branch mana aja
 - commit
