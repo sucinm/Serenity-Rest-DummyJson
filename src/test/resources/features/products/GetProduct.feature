@@ -1,6 +1,6 @@
 Feature: Get Product
 
-  @Test @PositiveCase
+  @Test @PositiveCase @Products
   Scenario: Get list products with valid token
     Given Get list product with valid token
     When Send request get list product
@@ -8,7 +8,7 @@ Feature: Get Product
     And Validate json schema list product
 
 
-  @Test @NegativeCase
+  @Test @NegativeCase @Products
   Scenario: Get list products with expired token
     Given Get list product with expired token
     When Send request get list product

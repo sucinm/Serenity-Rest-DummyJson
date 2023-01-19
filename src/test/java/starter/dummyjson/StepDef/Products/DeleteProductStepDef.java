@@ -12,8 +12,8 @@ public class DeleteProductStepDef {
     @Steps
     ProductsApi productsApi;
 
-    @Given("Delete product with valid id {int}")
-    public void deleteProductWithValidIdId(int id) {
+    @Given("Delete product with id {int}")
+    public void deleteProductWithId(int id) {
         productsApi.deleteProduct(id);
     }
 

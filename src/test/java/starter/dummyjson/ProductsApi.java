@@ -14,7 +14,6 @@ public class ProductsApi {
     public static String DELETE_PRODUCT = Constant.BASE_URL + "/products/{id}";
     public static String GET_LIST_PRODUCT = Constant.BASE_URL + "/auth/products";
 
-
     @Step("Get list product with authorization")
     public void getListProduct(String token) {
         SerenityRest.given()
@@ -28,8 +27,16 @@ public class ProductsApi {
                 .body(json);
     }
 
-    @Step("Put update product with invalid url")
+    @Step("Put update product")
     public void putUpdateProduct(int id, File json) {
+        SerenityRest.given()
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
+
+    @Step("Patch update product")
+    public void patchUpdateProduct(int id, File json) {
         SerenityRest.given()
                 .pathParam("id", id)
                 .contentType(ContentType.JSON)
