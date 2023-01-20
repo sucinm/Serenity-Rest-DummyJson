@@ -1,0 +1,11 @@
+{
+  "userId": 1,
+  "products_kecantikan": [
+    {
+      "id": 1,
+      "quantity_barang": 1 },
+    {
+      "id": 50,
+      "quantity_barang": 2 }
+  ]
+}
