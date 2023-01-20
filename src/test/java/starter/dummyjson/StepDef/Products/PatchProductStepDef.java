@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import starter.dummyjson.DummyjsonResponses;
 import starter.dummyjson.ProductsApi;
 import starter.dummyjson.Utils.Constant;
 
@@ -30,8 +31,8 @@ public class PatchProductStepDef {
     @And("Response body should be {int} as price and {int} as stock")
     public void responseBodyShouldBePriceAsPriceAndStockAsStock(int price, int stock) {
         SerenityRest.then()
-                .body("price", equalTo(price))
-                .body("stock", equalTo(stock));
+                .body(DummyjsonResponses.PRICE, equalTo(price))
+                .body(DummyjsonResponses.STOCK, equalTo(stock));
     }
 
     @And("Validate json schema update products")

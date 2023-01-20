@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import starter.dummyjson.DummyjsonResponses;
 import starter.dummyjson.UserApi;
 import starter.dummyjson.Utils.Constant;
 
@@ -30,8 +31,8 @@ public class PostUserStepDef {
     @And("Response body should contain {string} as firstName and {string} as lastName")
     public void responseBodyShouldContainAsFirstNameAndAsLastName(String firstName, String lastName) {
         SerenityRest.then()
-                .body("firstName", equalTo(firstName))
-                .body("lastName", equalTo(lastName));
+                .body(DummyjsonResponses.FIRST_NAME, equalTo(firstName))
+                .body(DummyjsonResponses.LAST_NAME, equalTo(lastName));
     }
 
     @And("Validate json schema success add user")
