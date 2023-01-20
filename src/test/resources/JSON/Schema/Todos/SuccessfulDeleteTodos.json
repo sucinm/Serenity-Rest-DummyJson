@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "todo": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "userId": {
+      "type": "integer"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "deletedOn": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "todo",
+    "completed",
+    "userId",
+    "isDeleted",
+    "deletedOn"
+  ]
+}
