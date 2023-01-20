@@ -9,6 +9,7 @@ public class CommentsApi {
     public static String PUT_COMMENTS = Constant.BASE_URL + "/comments/{id}";
     public static String DELETE_SINGLE_COMMENTS = Constant.BASE_URL + "/comments/{id}";
     public static String GET_COMMENTS = Constant.BASE_URL + "/comments/post/{id}";
+    public static String INVALID_GET_COMMENTS = Constant.BASE_URL + "/comments/post/{invalidId}";
     public static String INVALID_POST_COMMENTS = Constant.BASE_URL + "/commentsss/add";
     public static String INVALID_DELETE_COMMENTS = Constant.BASE_URL + "/comments?limit={limit}&skip={skip}&select=body,postId'";
     public static String INVALID_DELETE_SINGLE_COMMENTS = Constant.BASE_URL + "/comments/{invalidId}";
@@ -28,5 +29,15 @@ public class CommentsApi {
         SerenityRest.given()
                 .pathParam("limit", limit)
                 .pathParam("skip", skip);
+    }
+    @Step("Get single comment")
+    public void getSingleComment(int id){
+        SerenityRest.given()
+                .pathParam("id", id);
+    }
+    @Step("Get single comment with invalid")
+    public void getSingleCommentWithInvalidId(String invalidId){
+        SerenityRest.given()
+                .pathParam("invalidId", invalidId);
     }
 }
