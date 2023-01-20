@@ -1,8 +1,11 @@
 package starter.dummyjson;
 
+import io.restassured.http.ContentType;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
 import starter.dummyjson.Utils.Constant;
+
+import java.io.File;
 
 public class CommentsApi {
     public static String POST_COMMENTS = Constant.BASE_URL + "/comments/add";
@@ -39,5 +42,12 @@ public class CommentsApi {
     public void getSingleCommentWithInvalidId(String invalidId){
         SerenityRest.given()
                 .pathParam("invalidId", invalidId);
+    }
+    @Step("Put update comment")
+    public void putUpdateComment(int id, File json){
+        SerenityRest.given()
+                .pathParam("id", id)
+                .contentType(ContentType.JSON)
+                .body(json);
     }
 }
