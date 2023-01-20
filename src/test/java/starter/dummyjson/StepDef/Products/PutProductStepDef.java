@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import starter.dummyjson.DummyjsonResponses;
 import starter.dummyjson.ProductsApi;
 import starter.dummyjson.Utils.Constant;
 
@@ -33,7 +34,7 @@ public class PutProductStepDef {
     public void responseBodyId(int id) {
         SerenityRest.then()
                 .assertThat()
-                .body("id", equalTo(id));
+                .body(DummyjsonResponses.ID, equalTo(id));
     }
 
     @And("Validate json schema success update product")
@@ -54,7 +55,7 @@ public class PutProductStepDef {
     public void responseBodyError(String errorMessage) {
         SerenityRest.then()
                 .assertThat()
-                .body("message", containsString(errorMessage));
+                .body(DummyjsonResponses.ERRORMESSAGE, containsString(errorMessage));
     }
 
     @And("Validate json schema failed update product")

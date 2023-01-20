@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import starter.dummyjson.DummyjsonResponses;
 import starter.dummyjson.ProductsApi;
 import starter.dummyjson.Utils.Constant;
 
@@ -31,7 +32,7 @@ public class PostProductStepDef {
     @And("Response body should contain {string}")
     public void responseBodyShouldContain(String title) {
         SerenityRest.then()
-                .body("title", equalTo(title));
+                .body(DummyjsonResponses.TITLE, equalTo(title));
     }
 
     @And("Validate json schema success add products")
