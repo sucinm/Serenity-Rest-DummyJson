@@ -50,4 +50,10 @@ public class CommentsApi {
                 .contentType(ContentType.JSON)
                 .body(json);
     }
+    @Step("Post new comment")
+    public void postNewComment(File json){
+        SerenityRest.given()
+                .contentType(ContentType.JSON)
+                .body(json);
+    }
 }
