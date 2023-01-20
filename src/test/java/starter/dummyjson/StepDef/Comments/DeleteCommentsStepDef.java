@@ -72,4 +72,15 @@ public class DeleteCommentsStepDef {
         File jsonSchema = new File(Constant.JSON_SCHEMA+"/Comments/FailedDeleteSingleComment.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
+
+    //Scenario Delete comments with filter
+    @Given("Delete comments with limit {int} and skip {int}")
+    public void deleteCommentsWithLimitAndSkip(int limit, int skip) {
+        commentsApi.deleteCommentsWithFilter(limit, skip);
+    }
+
+    @When("send request delete comment with filter")
+    public void sendRequestDeleteCommentWithFilter() {
+        SerenityRest.when().delete(CommentsApi.INVALID_DELETE_COMMENTS);
+    }
 }

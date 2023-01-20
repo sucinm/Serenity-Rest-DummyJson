@@ -15,3 +15,9 @@ Feature: Delete Comments
     Then API should return status code 404
     And response body error should be "Comment with id 'x' not found"
     And validate json schema failed delete comments
+
+  @Test @NegativeCase @Comments
+  Scenario: Delete comments with filter
+    Given Delete comments with limit 1 and skip 3
+    When send request delete comment with filter
+    Then API should return status code 404
