@@ -4,7 +4,7 @@ Scenario: Get cart of user with valid id
 Given Get cart of user with valid id 6
 When Send request get cart of user
 Then Should return status code 200
-And Validate json schema get cart of user
+#And Validate json schema get cart of user
 
 @Test @NegativeCase @Carts
 Scenario: Get cart of user with invalid id

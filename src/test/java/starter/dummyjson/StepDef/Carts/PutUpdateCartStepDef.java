@@ -50,7 +50,7 @@ public class PutUpdateCartStepDef {
 
     @And("Validate json schema put update cart invalid json")
     public void validateJsonSchemaPutUpdateACartInvalidJson() {
-        File jsonSchema = new File(Constant.JSON_SCHEMA + "/Carts/PutUpdateCartsValidSchema.json");
+        File jsonSchema = new File(Constant.JSON_SCHEMA + "/Carts/PutUpdateCartsInvalidSchema.json");
         SerenityRest.then().assertThat().body(JsonSchemaValidator.
                 matchesJsonSchema(jsonSchema));
     }
